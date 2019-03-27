@@ -328,3 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/cyberfloodClient.egg-info
+/dist
+/build
+/CfClient.egg-info
