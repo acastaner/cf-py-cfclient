@@ -1,1 +1,1 @@
-name = "cyberfloodClient"
+from .cyberfloodClient import CfClient

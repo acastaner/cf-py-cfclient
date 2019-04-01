@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='cyberfloodClient',
-    version='0.0.1',
+    version='0.0.2',
     author="Arnaud Castaner",
     author_email="arnaud.castaner@outlook.com",
     description="A CyberFlood REST API client",
