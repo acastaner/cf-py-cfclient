@@ -100,6 +100,24 @@ class CfClient:
         )
         return response
 
+    def createMalwareProfile(self, name, description, scenarioIds):
+        response = self.__session.post(
+            self.controllerAddress + '/profiles/malware',
+            json={
+                'name': name,
+                'description': description,
+                'scenarios': scenarioIds,
+                'scenarioTypes': ['malware'],
+                'contentType': 'malware'
+            }
+        )
+        return response
+
+    def listMalwareProfiles(self):
+        return self.__session.get(
+            self.controllerAddress + '/profiles/malware'
+        )
+
     def listApplicationProfiles(self):
         return self.__session.get(
             self.controllerAddress + '/profiles/apps'
@@ -116,6 +134,17 @@ class CfClient:
     def createApplicationScenario(self, fileId, name, description):
         response = self.__session.post(
             self.controllerAddress + '/scenarios/apps',
+            data={'fileId': fileId,
+                  'name': name,
+                  'description': description,
+                  'category': 'Miscellaneous'
+                  }
+        )
+        return response
+
+    def createMalwareScenario(self, fileId, name, description):
+        response = self.__session.post(
+            self.controllerAddress + '/scenarios/malware',
             data={'fileId': fileId,
                   'name': name,
                   'description': description,
