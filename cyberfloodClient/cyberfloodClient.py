@@ -126,15 +126,18 @@ class CfClient:
     def createAttackScenario(self, fileId, name, description):
         response = self.__session.post(
             self.controllerAddress + '/scenarios/attacks',
-            data={'fileId': fileId, 'name': name,
-                  'description': description}
+            json={
+                'fileId': fileId,
+                'name': name,
+                'description': description
+            }
         )
         return response
 
     def createApplicationScenario(self, fileId, name, description):
         response = self.__session.post(
             self.controllerAddress + '/scenarios/apps',
-            data={'fileId': fileId,
+            json={'fileId': fileId,
                   'name': name,
                   'description': description,
                   'category': 'Miscellaneous'
@@ -145,7 +148,7 @@ class CfClient:
     def createMalwareScenario(self, fileId, name, description):
         response = self.__session.post(
             self.controllerAddress + '/scenarios/malware',
-            data={'fileId': fileId,
+            json={'fileId': fileId,
                   'name': name,
                   'description': description,
                   'category': 'Miscellaneous'
