@@ -95,8 +95,8 @@ class CfClient:
                 'description': description,
                 'category': 'Miscellaneous',
                 'scenarios': scenarioIds,
-                 'scenarioTypes': ['app']
-                }
+                'scenarioTypes': ['app']
+            }
         )
         return response
 
@@ -155,3 +155,13 @@ class CfClient:
                   }
         )
         return response
+
+    def getAttackProfile(self, profileId):
+        return self.__session.get(
+            self.controllerAddress + "/profiles/attacks/" + profileId
+        )
+
+    def getCyberSecurityAssessmentTest(self, csaTestId):
+        return self.__session.get(
+            self.controllerAddress + "/tests/cyber_security_assessment/" + csaTestId
+        )
