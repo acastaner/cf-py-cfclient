@@ -1,11 +1,16 @@
 class Profile:
 
     def __init__(self):
+        self.id = ""
         self.name = ""
         self.description = ""
-        self.category = ""
-        self.scenarioTypes = []
         self.scenarios = []
+        self.scenarioTypes = []
+        self.category = ""
+        self.author = ""
+        self.updatedBy = ""
+        self.updatedAt = ""
+        self.createdAt = ""
 
 
 class AttackProfile(Profile):
