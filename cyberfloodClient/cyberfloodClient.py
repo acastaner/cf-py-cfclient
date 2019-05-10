@@ -165,3 +165,15 @@ class CfClient:
         return self.__session.get(
             self.controllerAddress + "/tests/cyber_security_assessment/" + csaTestId
         )
+
+    def updateCyberSecurityAssessmentTest(self, csaTest, csaTestId):
+        return self.__session.put(
+            self.controllerAddress +
+            "/tests/cyber_security_assessment/" + csaTestId,
+            json=csaTest
+        )
+
+    def startTest(self, testId):
+        return self.__session.get(
+            self.controllerAddress + "/tests/" + testId + "/start"
+        )
