@@ -174,6 +174,6 @@ class CfClient:
         )
 
     def startTest(self, testId):
-        return self.__session.get(
+        return self.__session.put(
             self.controllerAddress + "/tests/" + testId + "/start"
         )
