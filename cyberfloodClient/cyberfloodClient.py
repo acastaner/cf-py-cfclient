@@ -166,6 +166,11 @@ class CfClient:
             self.controllerAddress + "/tests/cyber_security_assessment/" + csaTestId
         )
 
+    def getHttpThroughputTest(self, testId):
+        return self.__session.get(
+            self.controllerAddress + "//tests/http_throughput/" + testId
+        )
+
     def updateCyberSecurityAssessmentTest(self, csaTest, csaTestId):
         return self.__session.put(
             self.controllerAddress +
@@ -176,4 +181,14 @@ class CfClient:
     def startTest(self, testId):
         return self.__session.put(
             self.controllerAddress + "/tests/" + testId + "/start"
+        )
+
+    def getTestRun(self, testRunId):
+        return self.__session.get(
+            self.controllerAddress + "/test_runs/" + testRunId
+        )
+
+    def fetchTestRunTimelineStatistics(self, testRunId):
+        return self.__session.get(
+            self.controllerAddress + "/test_runs/" + testRunId + "/timeline"
         )
